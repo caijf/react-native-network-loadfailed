@@ -4,7 +4,7 @@
 
 ### Getting started
 
-安装 `react-native-network-loadfailed`
+安装
 
 	npm install react-native-network-loadfailed --save
 
@@ -30,4 +30,4 @@
 - **text** - (Number) - 提示文本，默认 "网络不给力，请再试试吧。"
 - **buttonText** - (Number) - 按钮文本，默认 "重试"
 - **source** - (Object, Image) - 默认 "游游哭"
-- **style** - (Object, Array) - 外层样式
+- **style** - (Object) - 设置样式

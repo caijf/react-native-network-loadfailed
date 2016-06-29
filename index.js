@@ -17,7 +17,7 @@ export default class LoadFailed extends Component{
 		let {style, onPressButton, buttonText, text, source} = this.props;
 
 		return (
-			<View style={styles.Failed}>
+			<View style={[styles.Failed, style]}>
                 <Image
                     source={source}
                     style={styles.errorImage}
@@ -38,10 +38,7 @@ export default class LoadFailed extends Component{
   
     static propTypes = {
         onPressButton: PropTypes.func,
-        style: PropTypes.oneOfType([
-	        PropTypes.object,
-	        PropTypes.array,
-	    ]),
+        style: PropTypes.object,
 	    text: PropTypes.string,
 	    buttonText: PropTypes.string,
 	    source: PropTypes.object
@@ -50,7 +47,8 @@ export default class LoadFailed extends Component{
     static defaultProps = {
     	source: {uri:LOADFAILED_PIC_URL},
     	text: '网络不给力，请再试试吧。',
-    	buttonText: '重试'
+    	buttonText: '重试',
+    	style:{}
     };
 }
 

@@ -1,7 +1,7 @@
 {
-  "name": "react-native-network-loadfailed",
-  "version": "1.0.0",
-  "description": "加载失败",
+  "name": "react-native-network",
+  "version": "1.0.1",
+  "description": "network status component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
