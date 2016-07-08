@@ -4,7 +4,8 @@ import {
 	View,
 	Image,
 	Text,
-	TouchableHighlight
+	TouchableHighlight,
+	Platform
 } from 'react-native';
 
 import styles from './styles.js';
@@ -19,10 +20,13 @@ const LOADFAILED_PIC_URL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAA
 export default class LoadFailed extends Component{
 	render(){
 
-		let {style, onPressButton, buttonText, text, underlayColor, source} = this.props;
+		let {onPressButton, buttonText, text, underlayColor, source, top} = this.props;
+
+		let defaultTop = Platform.OS === 'ios' ? 50 : 30,
+			marginTopValue = Number(top) + defaultTop;
 
 		return (
-			<View style={[styles.container, style]}>
+			<View style={[styles.container, {marginTop: marginTopValue}]}>
                 <Image
                     source={source}
                     style={styles.img}
@@ -43,20 +47,20 @@ export default class LoadFailed extends Component{
   
     static propTypes = {
         onPressButton: PropTypes.func,
-        style: PropTypes.object,
 	    text: PropTypes.string,
 	    buttonText: PropTypes.string,
 	    underlayColor: PropTypes.string,
-	    source: PropTypes.object
+	    source: PropTypes.object,
+	    top: PropTypes.number
     };
 
     static defaultProps = {
     	onPressButton: ()=>{},
-    	style:{},
     	buttonText: '重试',
     	underlayColor: '#22a9e2',
     	text: '网络不给力，请再试试吧。',
-    	source: {uri:LOADFAILED_PIC_URL}
+    	source: {uri:LOADFAILED_PIC_URL},
+    	top: 0
     };
 }
 

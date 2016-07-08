@@ -1,15 +1,13 @@
 
 import {
     Dimensions,
-    StyleSheet,
-    Platform
+    StyleSheet
 } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 module.exports = StyleSheet.create({
 	container:{
-        marginTop: (Platform.OS === 'ios' ? 50 : 30),
         alignItems: 'center',
         flex: 1,
         flexDirection: 'column',
