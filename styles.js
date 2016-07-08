@@ -5,17 +5,25 @@ import {
     Platform
 } from 'react-native';
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
+
 module.exports = StyleSheet.create({
-	Failed:{
+	container:{
         marginTop: (Platform.OS === 'ios' ? 50 : 30),
         alignItems: 'center',
         flex: 1,
         flexDirection: 'column',
     },
-    loadFailed:{
+    img:{
+        resizeMode:'stretch',
+        height:(SCREEN_WIDTH - 200),
+        width:(SCREEN_WIDTH - 200)
+    },
+    textWrapper:{
         marginTop:10,
         height:40,
     },
+    text:{},
     button:{
         marginTop:10,
         flexDirection: 'row',
@@ -32,12 +40,7 @@ module.exports = StyleSheet.create({
         alignItems: 'center',
         fontSize:16,
         textAlign:'center',
-        width:(Dimensions.get('window').width - 100)
-    },
-    errorImage:{
-        resizeMode:'stretch',
-        height:(Dimensions.get('window').width - 200),
-        width:(Dimensions.get('window').width - 200)
+        width:(SCREEN_WIDTH - 100)
     }
 });
 
